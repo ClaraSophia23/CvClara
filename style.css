@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+    padding: 30px 15px;
+    line-height: 1.5;
+}
+
+.curriculo {
+    max-width: 850px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.header-info {
+    flex: 1;
+    text-align: left;
+}
+
+#foto {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 75% 35%;
+    border: 2px solid #333;
+    flex-shrink: 0;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+header h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#contato {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 13px;
+}
+
+section {
+    margin-bottom: 22px;
+}
+
+h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+p, li {
+    font-size: 13px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.item {
+    margin-bottom: 12px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .curriculo {
+        padding: 25px 20px;
+    }
+
+    header {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .header-info {
+        text-align: center;
+    }
+
+    #contato {
+        justify-content: center;
+    }
+
+    #foto {
+        width: 130px;
+        height: 130px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+}
+
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .curriculo {
+        max-width: none;
+        padding: 0;
+    }
+
+    section, .item {
+        break-inside: avoid;
+    }
+}
