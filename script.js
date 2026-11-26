@@ -11,7 +11,7 @@ const curriculo = [
 
         objetivo: "Busco uma oportunidade de estágio na área de Tecnologia da Informação para aplicar meus conhecimentos, desenvolver experiência prática e ampliar minhas habilidades em desenvolvimento de sistemas.",
 
-        resumo: "Estudante de Análise e Desenvolvimento de Sistemas, com conhecimentos em desenvolvimento web, lógica de programação e criação de páginas dinâmicas. Possuo conhecimentos em HTML, CSS, JavaScript e Pacote Office, além de estar ampliando meus estudos em SQL. Tenho perfil organizado, responsável, comunicativo e facilidade para aprender.",
+        resumo: "Estudante de Análise e Desenvolvimento de Sistemas, com conhecimentos em desenvolvimento web, lógica de programação e criação de páginas dinâmicas. Possuo conhecimentos em HTML, CSS, JavaScript e Pacote Office, além de estar ampliando meus estudos em SQL e Python. Tenho perfil organizado, responsável, comunicativo e facilidade para aprender.",
 
         formacao: [
             {
@@ -46,16 +46,15 @@ const curriculo = [
             "CSS3 - Básico",
             "JavaScript - Básico",
             "Lógica de Programação - Básico",
-            "SQL - Em aprendizado"
+            "SQL - Básico"
         ],
 
         ferramentas: [
             "Microsoft Word",
-            "Microsoft Excel",
+            "Microsoft Excel Avançado",
             "Microsoft PowerPoint",
             "Microsoft Outlook",
-            "Visual Studio Code",
-            "Git Bash"
+            "Microsoft PowerBI"
         ],
 
         competencias: [
@@ -82,16 +81,37 @@ const curriculo = [
         cursos: [
             {
                 nome: "SQL",
-                situacao: "Em andamento"
+                situacao: "Finalizado"
+            },
+            {
+                nome: "Pacote Office",
+                situacao: "Finalizado"
+            },
+            {
+                nome: "Excel avançado",
+                situacao: "Finalizado"
+            },
+            {
+                nome: "PowerBI",
+                situacao: "Finalizado"
+            }
+        ],
+
+        experiencias: [
+            {
+                cargo: "Estagiária (Assistente de Sala)",
+                empresa: "Escola de Cursos Profissionalizantes Prepara IA",
+                periodo: "",
+                descricao: "Atuação como assistente de sala, auxiliando os alunos na compreensão e utilização do Pacote Office, além de realizar substituições pontuais do professor de inglês devido ao domínio e ótimo entendimento do idioma."
             }
         ],
 
         preferencias: {
             cargos: [
-                "Estágio em Desenvolvimento de Sistemas",
-                "Estágio em Desenvolvimento Web",
-                "Estágio em Análise de Sistemas",
-                "Estágio em Suporte de TI"
+                "Desenvolvimento de Sistemas",
+                "Desenvolvimento Web",
+                "Análise de Sistemas",
+                "Suporte de TI"
             ],
             modelo: "Remoto ou híbrido"
         }
@@ -126,8 +146,8 @@ contato.innerHTML = `
 const formacao = document.getElementById("formacao");
 
 for (let item of dados.formacao) {
-
     const div = document.createElement("div");
+    div.classList.add("item");
 
     div.innerHTML = `
         <h3>${item.curso}</h3>
@@ -142,8 +162,8 @@ for (let item of dados.formacao) {
 const projetos = document.getElementById("projetos");
 
 for (let projeto of dados.projetos) {
-
     const div = document.createElement("div");
+    div.classList.add("item");
 
     div.innerHTML = `
         <h3>${projeto.nome}</h3>
@@ -158,11 +178,8 @@ for (let projeto of dados.projetos) {
 const conhecimentos = document.getElementById("conhecimentos");
 
 for (let item of dados.conhecimentos) {
-
     const linha = document.createElement("li");
-
-    linha.innerHTML = `${item}`;
-
+    linha.innerText = item;
     conhecimentos.appendChild(linha);
 }
 
@@ -170,11 +187,8 @@ for (let item of dados.conhecimentos) {
 const ferramentas = document.getElementById("ferramentas");
 
 for (let item of dados.ferramentas) {
-
     const linha = document.createElement("li");
-
-    linha.innerHTML = `${item}`;
-
+    linha.innerText = item;
     ferramentas.appendChild(linha);
 }
 
@@ -182,11 +196,8 @@ for (let item of dados.ferramentas) {
 const competencias = document.getElementById("competencias");
 
 for (let item of dados.competencias) {
-
     const linha = document.createElement("li");
-
-    linha.innerHTML = `${item}`;
-
+    linha.innerText = item;
     competencias.appendChild(linha);
 }
 
@@ -194,13 +205,8 @@ for (let item of dados.competencias) {
 const idiomas = document.getElementById("idiomas");
 
 for (let item of dados.idiomas) {
-
     const div = document.createElement("div");
-
-    div.innerHTML = `
-        <p><strong>${item.nome}:</strong> ${item.nivel}</p>
-    `;
-
+    div.innerHTML = `<p><strong>${item.nome}:</strong> ${item.nivel}</p>`;
     idiomas.appendChild(div);
 }
 
@@ -208,17 +214,28 @@ for (let item of dados.idiomas) {
 const cursos = document.getElementById("cursos");
 
 for (let item of dados.cursos) {
-
     const div = document.createElement("div");
-
-    div.innerHTML = `
-        <p><strong>${item.nome}:</strong> ${item.situacao}</p>
-    `;
-
+    div.innerHTML = `<p><strong>${item.nome}:</strong> ${item.situacao}</p>`;
     cursos.appendChild(div);
 }
 
+// Experiências
+const experiencias = document.getElementById("experiencias");
 
+for (let item of dados.experiencias) {
+    const div = document.createElement("div");
+    div.classList.add("item");
+
+    div.innerHTML = `
+        <h3>${item.cargo}</h3>
+        ${item.empresa ? `<p>${item.empresa} ${item.periodo ? `- ${item.periodo}` : ""}</p>` : ""}
+        <p>${item.descricao}</p>
+    `;
+
+    experiencias.appendChild(div);
+}
+
+// Preferências
 const preferencias = document.getElementById("preferencias");
 
 preferencias.innerHTML = `
