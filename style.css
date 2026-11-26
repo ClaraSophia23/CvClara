@@ -35,12 +35,12 @@ header {
 }
 
 #foto {
-    width: 145px;
+    width: 155px;
     height: 145px;
-    border-radius: 50%;
+    border-radius: 0;
     object-fit: cover;
-    object-position: 75% 35%;
-    border: 2px solid #333;
+    object-position: 50% 40%;
+    border: 1px solid #000000;
     flex-shrink: 0;
 }
 
@@ -51,7 +51,7 @@ h1 {
 
 header h3 {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 #contato {
@@ -123,7 +123,7 @@ a:hover {
     }
 
     h1 {
-        font-size: 23px;
+        font-size: 30px;
     }
 }
 
